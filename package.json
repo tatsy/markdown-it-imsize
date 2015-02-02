@@ -25,6 +25,7 @@
     "markdown-it-testgen": "^0.1.4"
   },
   "devDependencies": {
+    "coveralls": "^2.11.2",
     "eslint": "^0.13.0",
     "eslint-plugin-nodeca": "^1.0.3",
     "istanbul": "^0.3.5",
