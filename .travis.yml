@@ -11,4 +11,4 @@ deploy:
   on:
     tags: true
     repo: tatsy/markdown-it-imsize
-    branch: master
+    all_branches: true
