@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-- '0.10'
+  - '0.10'
 script:
-- make test-ci
+  - make test-ci
 deploy:
   provider: npm
   email: tatsy.mail@gmail.com
@@ -11,3 +11,4 @@ deploy:
   on:
     tags: true
     repo: tatsy/markdown-it-imsize
+    branch: master
