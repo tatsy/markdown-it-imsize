@@ -248,7 +248,16 @@ Coverage. Image
 .
 <p><img src="x" alt="test" title="title" width="100" height="200"></p>
 .
-
+.
+![test]( x =WxH )
+.
+<p>![test]( x =WxH )</p>
+.
+.
+![test]( x = 100x200 )
+.
+<p>![test]( x = 100x200 )</p>
+.
 
 Coverage. Link
 .
