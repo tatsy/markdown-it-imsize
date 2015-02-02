@@ -1,0 +1,31 @@
+{
+  "name": "markdown-it-imsize",
+  "version": "0.1.0",
+  "description": "Markdown-it plugin to specify image size",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tatsy/markdown-it-imsize"
+  },
+  "author": "tatsy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tatsy/markdown-it-imsize/issues"
+  },
+  "homepage": "https://github.com/tatsy/markdown-it-imsize",
+  "keywords": [
+    "markdown-it",
+    "markdown-it-plubin"
+  ],
+  "dependencies": {
+    "eslint": "^0.13.0",
+    "markdown-it": "^3.0.4",
+    "markdown-it-testgen": "^0.1.4"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.5"
+  }
+}
