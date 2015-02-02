@@ -21,11 +21,12 @@
     "markdown-it-plubin"
   ],
   "dependencies": {
-    "eslint": "^0.13.0",
     "markdown-it": "^3.0.4",
     "markdown-it-testgen": "^0.1.4"
   },
   "devDependencies": {
+    "eslint": "^0.13.0",
+    "eslint-plugin-nodeca": "^1.0.3",
     "istanbul": "^0.3.5"
   }
 }

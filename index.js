@@ -140,9 +140,9 @@ function image_with_size(state, silent) {
       pos = labelEnd + 1;
     }
 
-  // covers label === '' and label === undefined
-  // (collapsed reference link and shortcut reference link respectively)
-  if (!label) { label = state.src.slice(labelStart, labelEnd); }
+    // covers label === '' and label === undefined
+    // (collapsed reference link and shortcut reference link respectively)
+    if (!label) { label = state.src.slice(labelStart, labelEnd); }
 
     ref = state.env.references[normalizeReference(label)];
     if (!ref) {
@@ -187,16 +187,19 @@ function image_with_size(state, silent) {
 
 function tokenize_imsize(tokens, idx, options, env, self) {
   var src = ' src="' + mdit.utils.escapeHtml(tokens[idx].src) + '"';
-  var title = tokens[idx].title ? (' title="' + mdit.utils.escapeHtml(mdit.utils.replaceEntities(tokens[idx].title)) + '"') : '';
+  var title = '';
+  if (tokens[idx].title) {
+    title = ' title="' + mdit.utils.escapeHtml(mdit.utils.replaceEntities(tokens[idx].title)) + '"';
+  }
   var alt = ' alt="' + self.renderInlineAsText(tokens[idx].tokens, options, env) + '"';
   var width = tokens[idx].width !== '' ? ' width="' + tokens[idx].width + '"' : '';
   var height = tokens[idx].height !== '' ? ' height="' + tokens[idx].height + '"' : '';
   var size = width + height;
   var suffix = options.xhtmlOut ? ' /' : '';
   return '<img' + src + alt + title + size + suffix + '>';
-};
+}
 
 module.exports = function imsize_plugin(md) {
   md.renderer.rules.imsize = tokenize_imsize;
   md.inline.ruler.before('emphasis', 'imsize', image_with_size);
-}
+};
