@@ -18,13 +18,13 @@
   "homepage": "https://github.com/tatsy/markdown-it-imsize",
   "keywords": [
     "markdown-it",
-    "markdown-it-plubin"
+    "markdown-it-plugin"
   ],
   "dependencies": {
-    "markdown-it": "^3.0.4",
-    "markdown-it-testgen": "^0.1.4"
   },
   "devDependencies": {
+    "markdown-it": "^3.0.4",
+    "markdown-it-testgen": "^0.1.4",
     "coveralls": "^2.11.2",
     "eslint": "^0.13.0",
     "eslint-plugin-nodeca": "^1.0.3",
