@@ -4,7 +4,7 @@
 [![NPM version](https://img.shields.io/npm/v/markdown-it-imsize.svg?style=flat)](https://www.npmjs.org/package/markdown-it-imsize)
 [![Coverage Status](https://coveralls.io/repos/tatsy/markdown-it-imsize/badge.svg)](https://coveralls.io/r/tatsy/markdown-it-imsize)
 
-> markdown-it plugin for size-specified image markups.
+> A markdown-it plugin for size-specified image markups. This plugin overloads original image renderer of markdown-it.
 
 ## Usage
 

@@ -9,5 +9,5 @@ describe('markdown-it-imsize', function() {
     linkify: true,
     typography: true
   }).use(require('../'));
-  generate(path.join(__dirname, 'fixtures/imsize.txt'), md);
+  generate(path.join(__dirname, 'fixtures/markdown-it-imsize/imsize.txt'), md);
 });

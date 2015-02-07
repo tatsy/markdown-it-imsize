@@ -170,7 +170,7 @@ function image_with_size(md) {
       newState.md.inline.tokenize(newState);
 
       state.push({
-        type: 'imsize',
+        type: 'image',
         src: href,
         title: title,
         tokens: tokens,
@@ -204,6 +204,6 @@ function tokenize_imsize(md) {
 }
 
 module.exports = function imsize_plugin(md) {
-  md.renderer.rules.imsize = tokenize_imsize(md);
-  md.inline.ruler.before('emphasis', 'imsize', image_with_size(md));
+  md.renderer.rules.image = tokenize_imsize(md);
+  md.inline.ruler.before('emphasis', 'image', image_with_size(md));
 };
