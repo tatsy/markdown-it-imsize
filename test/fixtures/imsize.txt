@@ -258,6 +258,26 @@ Coverage. Image
 .
 <p>![test]( x = 100x200 )</p>
 .
+.
+![test]( x =aaaxbbb )
+.
+<p>![test]( x =aaaxbbb )</p>
+.
+.
+![test](http://this.is.test.jpg =100x200)
+.
+<p><img src="http://this.is.test.jpg" alt="test" width="100" height="200"></p>
+.
+.
+![test](<x =100x200)
+.
+<p>![test](&lt;x =100x200)</p>
+.
+.
+![test](<x> =100x200)
+.
+<p><img src="x" alt="test" width="100" height="200"></p>
+.
 
 Coverage. Link
 .

@@ -41,7 +41,7 @@ function image_with_size(md) {
       //
 
       // [link](  <href>  "title"  )
-      //    ^^ skipping these spaces
+      //        ^^ skipping these spaces
       pos++;
       for (; pos < max; pos++) {
         code = state.src.charCodeAt(pos);
@@ -50,7 +50,7 @@ function image_with_size(md) {
       if (pos >= max) { return false; }
 
       // [link](  <href>  "title"  )
-      //      ^^^^^^ parsing link destination
+      //          ^^^^^^ parsing link destination
       start = pos;
       res = md.helpers.parseLinkDestination(state.src, pos, state.posMax);
       if (res.ok && state.md.inline.validateLink(res.str)) {
@@ -61,7 +61,7 @@ function image_with_size(md) {
       }
 
       // [link](  <href>  "title"  )
-      //        ^^ skipping these spaces
+      //                ^^ skipping these spaces
       start = pos;
       for (; pos < max; pos++) {
         code = state.src.charCodeAt(pos);
@@ -69,14 +69,14 @@ function image_with_size(md) {
       }
 
       // [link](  <href>  "title"  )
-      //          ^^^^^^^ parsing link title
+      //                  ^^^^^^^ parsing link title
       res = md.helpers.parseLinkTitle(state.src, pos, state.posMax);
       if (pos < max && start !== pos && res.ok) {
         title = res.str;
         pos = res.pos;
 
         // [link](  <href>  "title"  )
-        //             ^^ skipping these spaces
+        //                         ^^ skipping these spaces
         for (; pos < max; pos++) {
           code = state.src.charCodeAt(pos);
           if (code !== 0x20 && code !== 0x0A) { break; }
@@ -86,7 +86,7 @@ function image_with_size(md) {
       }
 
       // [link](  <href>  "title" =WxH  )
-      //              ^^^^ parsing image size
+      //                          ^^^^ parsing image size
       if (pos - 1 >= 0) {
         code = state.src.charCodeAt(pos - 1);
 
@@ -100,7 +100,7 @@ function image_with_size(md) {
             pos = res.pos;
 
             // [link](  <href>  "title" =WxH  )
-            //                ^^ skipping these spaces
+            //                              ^^ skipping these spaces
             for (; pos < max; pos++) {
               code = state.src.charCodeAt(pos);
               if (code !== 0x20 && code !== 0x0A) { break; }
@@ -122,7 +122,7 @@ function image_with_size(md) {
       if (typeof state.env.references === 'undefined') { return false; }
 
       // [foo]  [bar]
-      //    ^^ optional whitespace (can include newlines)
+      //      ^^ optional whitespace (can include newlines)
       for (; pos < max; pos++) {
         code = state.src.charCodeAt(pos);
         if (code !== 0x20 && code !== 0x0A) { break; }

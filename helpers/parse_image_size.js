@@ -46,7 +46,7 @@ module.exports = function parseImageSize(str, pos, max) {
   // (2) =300x
   // (3) =x200
   code = str.charCodeAt(pos);
-  if (code !== 0x78 /* x */ && (code < 0x30 && code  > 0x39) /* [0-9] */) {
+  if (code !== 0x78 /* x */ && (code < 0x30 || code  > 0x39) /* [0-9] */) {
     return result;
   }
 
