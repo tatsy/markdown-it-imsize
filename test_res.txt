@@ -1,669 +1,0 @@
-
-
-  CommonMark
-    
-      √ line 3 
-      √ line 13 
-      √ line 25 
-      √ line 38 
-      √ line 51 
-      √ line 60 
-      √ line 69 
-      √ line 82 
-      √ line 95 
-      √ line 105 
-      √ line 116 
-      √ line 125 
-      √ line 134 
-      √ line 143 
-      √ line 152 
-      √ line 161 
-      √ line 176 
-      √ line 185 
-      √ line 202 
-      √ line 215 
-      √ line 227 
-      √ line 244 
-      √ line 259 
-      √ line 278 
-      √ line 287 
-      √ line 296 
-      √ line 305 
-      √ line 314 
-      √ line 323 
-      √ line 336 
-      √ line 346 
-      √ line 357 
-      √ line 368 
-      √ line 379 
-      √ line 388 
-      √ line 397 
-      √ line 406 
-      √ line 419 
-      √ line 432 
-      √ line 445 
-      √ line 458 
-      √ line 472 
-      √ line 486 
-      √ line 504 
-      √ line 522 
-      √ line 532 
-      √ line 543 
-      √ line 559 
-      √ line 569 
-      √ line 579 
-      √ line 597 
-      √ line 610 
-      √ line 623 
-      √ line 643 
-      √ line 660 
-      √ line 670 
-      √ line 681 
-      √ line 694 
-      √ line 706 
-      √ line 719 
-      √ line 729 
-      √ line 741 
-      √ line 757 
-      √ line 779 
-      √ line 793 
-      √ line 805 
-      √ line 817 
-      √ line 837 
-      √ line 849 
-      √ line 863 
-      √ line 873 
-      √ line 887 
-      √ line 901 
-      √ line 915 
-      √ line 929 
-      √ line 943 
-      √ line 957 
-      √ line 966 
-      √ line 981 
-      √ line 995 
-      √ line 1005 
-      √ line 1019 
-      √ line 1035 
-      √ line 1051 
-      √ line 1065 
-      √ line 1077 
-      √ line 1089 
-      √ line 1102 
-      √ line 1113 
-      √ line 1126 
-      √ line 1142 
-      √ line 1159 
-      √ line 1175 
-      √ line 1191 
-      √ line 1201 
-      √ line 1212 
-      √ line 1224 
-      √ line 1248 
-      √ line 1261 
-      √ line 1276 
-      √ line 1291 
-      √ line 1304 
-      √ line 1317 
-      √ line 1350 
-      √ line 1363 
-      √ line 1378 
-      √ line 1393 
-      √ line 1404 
-      √ line 1419 
-      √ line 1432 
-      √ line 1457 
-      √ line 1468 
-      √ line 1481 
-      √ line 1492 
-      √ line 1505 
-      √ line 1517 
-      √ line 1529 
-      √ line 1540 
-      √ line 1552 
-      √ line 1563 
-      √ line 1574 
-      √ line 1582 
-      √ line 1591 
-      √ line 1604 
-      √ line 1619 
-      √ line 1633 
-      √ line 1647 
-      √ line 1665 
-      √ line 1678 
-      √ line 1690 
-      √ line 1706 
-      √ line 1719 
-      √ line 1730 
-      √ line 1743 
-      √ line 1754 
-      √ line 1766 
-      √ line 1777 
-      √ line 1794 
-      √ line 1809 
-      √ line 1824 
-      √ line 1839 
-      √ line 1853 
-      √ line 1868 
-      √ line 1883 
-      √ line 1896 
-      √ line 1913 
-      √ line 1928 
-      √ line 1943 
-      √ line 1953 
-      √ line 1965 
-      √ line 1978 
-      √ line 1994 
-      √ line 2007 
-      √ line 2021 
-      √ line 2034 
-      √ line 2051 
-      √ line 2064 
-      √ line 2078 
-      √ line 2092 
-      √ line 2109 
-      √ line 2128 
-      √ line 2145 
-      √ line 2165 
-      √ line 2189 
-      √ line 2203 
-      √ line 2219 
-      √ line 2234 
-      √ line 2250 
-      √ line 2270 
-      √ line 2288 
-      √ line 2350 
-      √ line 2377 
-      √ line 2394 
-      √ line 2411 
-      √ line 2428 
-      √ line 2449 
-      √ line 2470 
-      √ line 2482 
-      √ line 2496 
-      √ line 2512 
-      √ line 2527 
-      √ line 2542 
-      √ line 2557 
-      √ line 2568 
-      √ line 2592 
-      √ line 2616 
-      √ line 2640 
-      √ line 2660 
-      √ line 2684 
-      √ line 2697 
-      √ line 2716 
-      √ line 2735 
-      √ line 2756 
-      √ line 2771 
-      √ line 2787 
-      √ line 2802 
-      √ line 2817 
-      √ line 2836 
-      √ line 2855 
-      √ line 2872 
-      √ line 2889 
-      √ line 2904 
-      √ line 2917 
-      √ line 2941 
-      √ line 2960 
-      √ line 2986 
-      √ line 3007 
-      √ line 3033 
-      √ line 3056 
-      √ line 3078 
-      √ line 3098 
-      √ line 3122 
-      √ line 3145 
-      √ line 3169 
-      √ line 3192 
-      √ line 3211 
-      √ line 3234 
-      √ line 3245 
-      √ line 3261 
-      √ line 3281 
-      √ line 3311 
-      √ line 3320 
-      √ line 3329 
-      √ line 3338 
-      √ line 3361 
-      √ line 3370 
-      √ line 3381 
-      √ line 3390 
-      √ line 3400 
-      √ line 3412 
-      √ line 3421 
-      √ line 3430 
-      √ line 3439 
-      √ line 3450 
-      √ line 3462 
-      √ line 3471 
-      √ line 3480 
-      √ line 3489 
-      √ line 3498 
-      √ line 3507 
-      √ line 3516 
-      √ line 3525 
-      √ line 3534 
-      √ line 3545 
-      √ line 3557 
-      √ line 3566 
-      √ line 3576 
-      √ line 3585 
-      √ line 3594 
-      √ line 3603 
-      √ line 3614 
-      √ line 3624 
-      √ line 3633 
-      √ line 3642 
-      √ line 3651 
-      √ line 3660 
-      √ line 3669 
-      √ line 3678 
-      √ line 3687 
-      √ line 3696 
-      √ line 3705 
-      √ line 3714 
-      √ line 3723 
-      √ line 3732 
-      √ line 3741 
-      √ line 3750 
-      √ line 3759 
-      √ line 3768 
-      √ line 3777 
-      √ line 3786 
-      √ line 3795 
-      √ line 3804 
-      √ line 3813 
-      √ line 3822 
-      √ line 3831 
-      √ line 3840 
-      √ line 3849 
-      √ line 3858 
-      √ line 3867 
-      √ line 3876 
-      √ line 3885 
-      √ line 3894 
-      √ line 3903 
-      √ line 3912 
-      √ line 3921 
-      √ line 3930 
-      √ line 3939 
-      √ line 3948 
-      √ line 3957 
-      √ line 3966 
-      √ line 3975 
-      √ line 3984 
-      √ line 3993 
-      √ line 4002 
-      √ line 4011 
-      √ line 4020 
-      √ line 4029 
-      √ line 4040 
-      √ line 4049 
-      √ line 4058 
-      √ line 4067 
-      √ line 4076 
-      √ line 4085 
-      √ line 4094 
-      √ line 4103 
-      √ line 4112 
-      √ line 4121 
-      √ line 4132 
-      √ line 4141 
-      √ line 4150 
-      √ line 4159 
-      √ line 4168 
-      √ line 4177 
-      √ line 4186 
-      √ line 4195 
-      √ line 4204 
-      √ line 4213 
-      √ line 4222 
-      √ line 4231 
-      √ line 4240 
-      √ line 4249 
-      √ line 4258 
-      √ line 4269 
-      √ line 4278 
-      √ line 4287 
-      √ line 4296 
-      √ line 4305 
-      √ line 4314 
-      √ line 4323 
-      √ line 4332 
-      √ line 4341 
-      √ line 4352 
-      √ line 4361 
-      √ line 4370 
-      √ line 4379 
-      √ line 4388 
-      √ line 4397 
-      √ line 4406 
-      √ line 4415 
-      √ line 4424 
-      √ line 4433 
-      √ line 4442 
-      √ line 4451 
-      √ line 4460 
-      √ line 4469 
-      √ line 4478 
-      √ line 4487 
-      √ line 4496 
-      √ line 4505 
-      √ line 4514 
-      √ line 4523 
-      √ line 4532 
-      √ line 4541 
-      √ line 4550 
-      √ line 4559 
-      √ line 4568 
-      √ line 4577 
-      √ line 4586 
-      √ line 4595 
-      √ line 4604 
-      √ line 4613 
-      √ line 4622 
-      √ line 4631 
-      √ line 4640 
-      √ line 4649 
-      √ line 4658 
-      √ line 4667 
-      √ line 4676 
-      √ line 4685 
-      √ line 4694 
-      √ line 4703 
-      √ line 4712 
-      √ line 4721 
-      √ line 4730 
-      √ line 4739 
-      √ line 4748 
-      √ line 4757 
-      √ line 4766 
-      √ line 4775 
-      √ line 4784 
-      √ line 4793 
-      √ line 4802 
-      √ line 4811 
-      √ line 4820 
-      √ line 4829 
-      √ line 4838 
-      √ line 4847 
-      √ line 4858 
-      √ line 4867 
-      √ line 4876 
-      √ line 4885 
-      √ line 4894 
-      √ line 4903 
-      √ line 4912 
-      √ line 4921 
-      √ line 4934 
-      √ line 4943 
-      √ line 4952 
-      √ line 4961 
-      √ line 4971 
-      √ line 4980 
-      √ line 4989 
-      √ line 4998 
-      √ line 5007 
-      √ line 5016 
-[ { type: 'text', content: 'moon', level: 0 } ]
-      √ line 5025 
-      √ line 5034 
-      √ line 5043 
-[ { type: 'text', content: '[', level: 0 },
-  { type: 'link_open',
-    href: 'uri1',
-    target: '',
-    title: '',
-    level: 0 },
-  { type: 'text', content: 'foo', level: 1 },
-  { type: 'link_close', level: 0 },
-  { type: 'text', content: '](uri2)', level: 0 } ]
-      √ line 5052 
-      √ line 5061 
-      √ line 5070 
-      √ line 5079 
-      √ line 5088 
-      √ line 5097 
-      √ line 5106 
-      √ line 5117 
-      √ line 5128 
-      √ line 5139 
-[ { type: 'text', content: 'moon', level: 0 } ]
-      √ line 5150 
-      √ line 5161 
-      √ line 5172 
-      √ line 5183 
-      √ line 5194 
-      √ line 5205 
-      √ line 5216 
-      √ line 5227 
-      √ line 5238 
-      √ line 5249 
-      √ line 5260 
-      √ line 5272 
-      √ line 5283 
-      √ line 5295 
-      √ line 5308 
-      √ line 5319 
-      √ line 5331 
-      √ line 5343 
-      √ line 5355 
-      √ line 5366 
-      √ line 5377 
-      √ line 5388 
-      √ line 5399 
-      √ line 5411 
-      √ line 5422 
-      √ line 5433 
-      √ line 5444 
-      √ line 5455 
-      √ line 5466 
-      √ line 5477 
-      √ line 5488 
-      √ line 5499 
-      √ line 5511 
-      √ line 5522 
-      √ line 5534 
-[ { type: 'text', content: 'foo', level: 0 } ]
-      √ line 5546 
-[ { type: 'text', content: 'foo ', level: 0 },
-  { type: 'em_open', level: 0 },
-  { type: 'text', content: 'bar', level: 1 },
-  { type: 'em_close', level: 0 } ]
-      √ line 5555 
-[ { type: 'text', content: 'foo ', level: 0 },
-  { type: 'imsize',
-    src: '/url',
-    title: '',
-    tokens: [ [Object] ],
-    level: 0,
-    width: '',
-    height: '' } ]
-      1) line 5566
-[ { type: 'text', content: 'foo ', level: 0 },
-  { type: 'link_open',
-    href: '/url',
-    target: '',
-    title: '',
-    level: 0 },
-  { type: 'text', content: 'bar', level: 1 },
-  { type: 'link_close', level: 0 } ]
-      √ line 5575 
-[ { type: 'text', content: 'foo ', level: 0 },
-  { type: 'em_open', level: 0 },
-  { type: 'text', content: 'bar', level: 1 },
-  { type: 'em_close', level: 0 } ]
-      √ line 5584 
-[ { type: 'text', content: 'foo ', level: 0 },
-  { type: 'em_open', level: 0 },
-  { type: 'text', content: 'bar', level: 1 },
-  { type: 'em_close', level: 0 } ]
-      √ line 5595 
-[ { type: 'text', content: 'foo', level: 0 } ]
-      √ line 5606 
-hoge
-      √ line 5615 
-[ { type: 'text', content: 'foo', level: 0 } ]
-      √ line 5624 
-[]
-      √ line 5633 
-[ { type: 'text', content: 'foo', level: 0 } ]
-      √ line 5642 
-[ { type: 'text', content: 'foo', level: 0 } ]
-      √ line 5653 
-[ { type: 'text', content: 'foo', level: 0 } ]
-      √ line 5664 
-[ { type: 'em_open', level: 0 },
-  { type: 'text', content: 'foo', level: 1 },
-  { type: 'em_close', level: 0 },
-  { type: 'text', content: ' bar', level: 0 } ]
-      √ line 5675 
-[ { type: 'text', content: 'Foo', level: 0 } ]
-      √ line 5686 
-[ { type: 'text', content: 'foo', level: 0 } ]
-      √ line 5697 
-[ { type: 'text', content: 'foo', level: 0 } ]
-      √ line 5709 
-[ { type: 'em_open', level: 0 },
-  { type: 'text', content: 'foo', level: 1 },
-  { type: 'em_close', level: 0 },
-  { type: 'text', content: ' bar', level: 0 } ]
-      √ line 5720 
-      √ line 5731 
-[ { type: 'text', content: 'Foo', level: 0 } ]
-      √ line 5743 
-      √ line 5754 
-      √ line 5765 
-      √ line 5776 
-      √ line 5785 
-      √ line 5794 
-      √ line 5803 
-      √ line 5812 
-      √ line 5821 
-      √ line 5830 
-      √ line 5839 
-      √ line 5848 
-      √ line 5857 
-      √ line 5866 
-      √ line 5875 
-      √ line 5884 
-      √ line 5893 
-      √ line 5902 
-      √ line 5911 
-      √ line 5920 
-      √ line 5931 
-      √ line 5942 
-      √ line 5951 
-      √ line 5960 
-      √ line 5969 
-      √ line 5980 
-      √ line 5989 
-      √ line 6000 
-      √ line 6009 
-      √ line 6020 
-      √ line 6029 
-      √ line 6038 
-      √ line 6047 
-      √ line 6056 
-      √ line 6065 
-      √ line 6074 
-      √ line 6083 
-      √ line 6094 
-      √ line 6105 
-      √ line 6116 
-      √ line 6127 
-      √ line 6138 
-      √ line 6149 
-      √ line 6160 
-      √ line 6170 
-      √ line 6180 
-      √ line 6191 
-      √ line 6202 
-      √ line 6211 
-      √ line 6220 
-      √ line 6229 
-      √ line 6238 
-      √ line 6249 
-      √ line 6260 
-      √ line 6269 
-      √ line 6278 
-
-  markdown-it-imsize
-    
-      √ line 1 
-      √ line 11 
-      √ line 33 
-hoge
-      √ line 44 
-      √ line 55 
-      √ line 63 
-      √ line 69 
-      √ line 77 
-      √ line 85 
-      √ line 93 
-      √ line 101 
-      √ line 109 
-      √ line 127 
-      √ line 137 
-      √ line 145 
-      √ line 153 
-      √ line 167 
-      √ line 175 
-      √ line 188 
-hoge
-      √ line 201 
-      √ line 206 
-      √ line 213 
-      √ line 220 
-[ { type: 'text', content: 'test', level: 0 } ]
-      √ line 225 
-[ { type: 'text', content: 'test', level: 0 } ]
-      √ line 230 
-[ { type: 'text', content: 'test', level: 0 } ]
-      √ line 235 
-[ { type: 'text', content: 'test', level: 0 } ]
-      √ line 240 
-[ { type: 'text', content: 'test', level: 0 } ]
-      √ line 245 
-hoge
-      √ line 250 
-hoge
-      √ line 255 
-hoge
-      √ line 260 
-[ { type: 'text', content: 'test', level: 0 } ]
-      √ line 265 
-      √ line 270 
-[ { type: 'text', content: 'test', level: 0 } ]
-      √ line 275 
-      √ line 282 
-      √ line 289 
-
-
-  563 passing (120ms)
-  1 failing
-
-  1) CommonMark  line 5566:
-
-      AssertionError: expected '<p><img src="/url2" alt="foo " /></p>\n' to equal '<p><img src="/url2" alt="foo bar" /></p>\n'
-      + expected - actual
-
-      +<p><img src="/url2" alt="foo bar" /></p>
-      -<p><img src="/url2" alt="foo " /></p>
-      
-      at Function.assert.strictEqual (C:\Users\Tatsuya\Documents\Programs\Web\markdown-it-imsize\node_modules\markdown-it-testgen\node_modules\chai\lib\chai\interface\assert.js:169:32)
-      at Context.<anonymous> (C:\Users\Tatsuya\Documents\Programs\Web\markdown-it-imsize\node_modules\markdown-it-testgen\index.js:188:26)
-      at callFn (C:\Users\Tatsuya\AppData\Roaming\npm\node_modules\mocha\lib\runnable.js:251:21)
-      at Test.Runnable.run (C:\Users\Tatsuya\AppData\Roaming\npm\node_modules\mocha\lib\runnable.js:244:7)
-      at Runner.runTest (C:\Users\Tatsuya\AppData\Roaming\npm\node_modules\mocha\lib\runner.js:374:10)
-      at C:\Users\Tatsuya\AppData\Roaming\npm\node_modules\mocha\lib\runner.js:452:12
-      at next (C:\Users\Tatsuya\AppData\Roaming\npm\node_modules\mocha\lib\runner.js:299:14)
-      at C:\Users\Tatsuya\AppData\Roaming\npm\node_modules\mocha\lib\runner.js:309:7
-      at next (C:\Users\Tatsuya\AppData\Roaming\npm\node_modules\mocha\lib\runner.js:248:23)
-      at Object._onImmediate (C:\Users\Tatsuya\AppData\Roaming\npm\node_modules\mocha\lib\runner.js:276:5)
-      at processImmediate [as _immediateCallback] (timers.js:345:15)
-
-
-

@@ -15,7 +15,7 @@ var md = require('markdown-it')({
   html: true,
   linkify: true,
   typography: true
-}).use(require('markdown-it-imsize'); // <-- this use(package_name) is required
+}).use(require('markdown-it-imsize')); // <-- this use(package_name) is required
 ```
 
 #### Example
@@ -29,3 +29,17 @@ is interpreted as
 ```html
 <p><img src="image.png" width="100" height="200"></p>
 ```
+
+### Options
+
+#### Auto fill
+
+```js
+var md = require('markdown-it')({
+  html: true,
+  linkify: true,
+  typography: true
+}).use(require('markdown-it-imsize'), { autofill: true });
+```
+
+will fill the width and height fields automatically if the specified image path is valid.

@@ -3,10 +3,12 @@
 
 'use strict';
 
+var sizeOf = require('image-size');
+
 var parseImageSize = require('./helpers/parse_image_size');
 var normalizeReference = require('./helpers/normalize_reference.js');
 
-function image_with_size(md) {
+function image_with_size(md, options) {
   return function(state, silent) {
     var code,
         href,
@@ -169,6 +171,19 @@ function image_with_size(md) {
       );
       newState.md.inline.tokenize(newState);
 
+      // if 'autofill' option is specified
+      // and width/height are both blank,
+      // they are filled automatically
+      if (options) {
+        if (options.autofill && width === '' && height === '') {
+          try {
+            var dimensions = sizeOf(href);
+            width = dimensions.width;
+            height = dimensions.height;
+          } catch (e) { }
+        }
+      }
+
       state.push({
         type: 'image',
         src: href,
@@ -186,7 +201,6 @@ function image_with_size(md) {
   };
 }
 
-
 function tokenize_imsize(md) {
   return function(tokens, idx, options, env, self) {
     var src = ' src="' + md.utils.escapeHtml(tokens[idx].src) + '"';
@@ -203,7 +217,7 @@ function tokenize_imsize(md) {
   };
 }
 
-module.exports = function imsize_plugin(md) {
+module.exports = function imsize_plugin(md, options) {
   md.renderer.rules.image = tokenize_imsize(md);
-  md.inline.ruler.before('emphasis', 'image', image_with_size(md));
+  md.inline.ruler.before('emphasis', 'image', image_with_size(md, options));
 };
