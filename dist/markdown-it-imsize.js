@@ -407,7 +407,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function asyncFileToBuffer(filepath, callback) {
-	  fs.oepn(filepath, 'r', function(err0, descriptor) {
+	  fs.open(filepath, 'r', function(err0, descriptor) {
 	    if (err0) {
 	      return callback(err0);
 	    }
