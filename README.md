@@ -66,7 +66,7 @@ where ```image.png``` is a valid path and its size is 200 x 200.
 bower install markdown-it-imsize
 ```
 
-Script for using ```markdown-it-imsize``` with RequireJS is as follows.
+Script for using ```markdown-it-imsize``` with RequireJS is like,
 
 ```js
 require(['require', 'MarkdownIt', 'MarkdownItImsize'], function(require) {
@@ -77,7 +77,6 @@ require(['require', 'MarkdownIt', 'MarkdownItImsize'], function(require) {
   }).use(require('MarkdownItImsize'));
 
   var rendered = md.render("![test](test.jpg =100x)");
-  console.log(rendered);
   document.getElementById('image-box').innerHTML = rendered;
 });
 ```
