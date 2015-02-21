@@ -46,7 +46,7 @@ will fill the width and height fields automatically if the specified image path 
 
 Therefore,
 
-```js
+```md
 ![test](image.png)
 ```
 
