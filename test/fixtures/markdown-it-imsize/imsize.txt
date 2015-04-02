@@ -278,6 +278,11 @@ Coverage. Image
 .
 <p><img src="x" alt="test" width="100" height="200"></p>
 .
+.
+![test](test =100%x)
+.
+<p><img src="test" alt="test" width="100%"></p>
+.
 
 Coverage. Link
 .
