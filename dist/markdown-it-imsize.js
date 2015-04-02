@@ -59,15 +59,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var sizeOf = __webpack_require__(3);
+	var sizeOf = __webpack_require__(2);
 
 	var parseImageSize = __webpack_require__(1);
-	var normalizeReference = __webpack_require__(2);
 
 	function image_with_size(md, options) {
 	  return function(state, silent) {
-	    var code,
-	        href,
+	    var attrs,
+	        code,
 	        label,
 	        labelEnd,
 	        labelStart,
@@ -77,8 +76,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title,
 	        width = '',
 	        height = '',
+	        token,
 	        tokens,
 	        start,
+	        href = '',
 	        oldPos = state.pos,
 	        max = state.posMax;
 
@@ -111,11 +112,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      //          ^^^^^^ parsing link destination
 	      start = pos;
 	      res = md.helpers.parseLinkDestination(state.src, pos, state.posMax);
-	      if (res.ok && state.md.inline.validateLink(res.str)) {
-	        href = res.str;
-	        pos = res.pos;
-	      } else {
-	        href = '';
+	      if (res.ok) {
+	        href = state.md.normalizeLink(res.str);
+	        if (state.md.validateLink(href)) {
+	          pos = res.pos;
+	        } else {
+	          href = '';
+	        }
 	      }
 
 	      // [link](  <href>  "title"  )
@@ -202,7 +205,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // (collapsed reference link and shortcut reference link respectively)
 	      if (!label) { label = state.src.slice(labelStart, labelEnd); }
 
-	      ref = state.env.references[normalizeReference(label)];
+	      ref = state.env.references[md.utils.normalizeReference(label)];
 	      if (!ref) {
 	        state.pos = oldPos;
 	        return false;
@@ -240,15 +243,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }
 
-	      state.push({
-	        type: 'image',
-	        src: href,
-	        title: title,
-	        tokens: tokens,
-	        level: state.level,
-	        width: width,
-	        height: height
-	      });
+	      token          = state.push('image', 'img', 0);
+	      token.attrs    = attrs = [ [ 'src', href ],
+	                                 [ 'alt', '' ] ];
+	      token.children = tokens;
+	      if (title) {
+	        attrs.push([ 'title', title ]);
+	      }
+
+	      if (width !== '') {
+	        attrs.push([ 'width', width ]);
+	      }
+
+	      if (height !== '') {
+	        attrs.push([ 'height', height ]);
+	      }
 	    }
 
 	    state.pos = pos;
@@ -257,24 +266,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	}
 
-	function tokenize_imsize(md) {
-	  return function(tokens, idx, options, env, self) {
-	    var src = ' src="' + md.utils.escapeHtml(tokens[idx].src) + '"';
-	    var title = '';
-	    if (tokens[idx].title) {
-	      title = ' title="' + md.utils.escapeHtml(md.utils.replaceEntities(tokens[idx].title)) + '"';
-	    }
-	    var alt = ' alt="' + self.renderInlineAsText(tokens[idx].tokens, options, env) + '"';
-	    var width = tokens[idx].width !== '' ? ' width="' + tokens[idx].width + '"' : '';
-	    var height = tokens[idx].height !== '' ? ' height="' + tokens[idx].height + '"' : '';
-	    var size = width + height;
-	    var suffix = options.xhtmlOut ? ' /' : '';
-	    return '<img' + src + alt + title + size + suffix + '>';
-	  };
-	}
-
 	module.exports = function imsize_plugin(md, options) {
-	  md.renderer.rules.image = tokenize_imsize(md);
 	  md.inline.ruler.before('emphasis', 'image', image_with_size(md, options));
 	};
 
@@ -361,33 +353,17 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	'use strict';
-	// Hepler to [reference labels]. No better place for this code :)
-	// It's only for refs/links and should not be exported anywhere.
-	module.exports = function normalizeReference(str) {
-	  // use .toUpperCase() instead of .toLowerCase()
-	  // here to avoid a conflict with Object.prototype
-	  // members (most notably, `__proto__`)
-	  return str.trim().replace(/\s+/g, ' ').toUpperCase();
-	};
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
 
-	var fs   = __webpack_require__(17);
-	var path = __webpack_require__(7);
+	var fs   = __webpack_require__(16);
+	var path = __webpack_require__(6);
 
-	var detector = __webpack_require__(4);
+	var detector = __webpack_require__(3);
 	var handlers = {};
-	var types = __webpack_require__(6);
+	var types = __webpack_require__(5);
 
 	types.forEach(function(type) {
-	  handlers[type] = __webpack_require__(5)("./" + type);
+	  handlers[type] = __webpack_require__(4)("./" + type);
 	});
 
 	var MaxBufferSize = 128 * 1024;
@@ -469,19 +445,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7).Buffer))
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var typeMap = {};
-	var types = __webpack_require__(6);
+	var types = __webpack_require__(5);
 
 	types.forEach(function(type) {
-	  typeMap[type] = __webpack_require__(5)("./" + type).detect;
+	  typeMap[type] = __webpack_require__(4)("./" + type).detect;
 	});
 
 	module.exports = function(buffer, filepath) {
@@ -499,26 +475,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./bmp": 9,
-		"./bmp.js": 9,
-		"./gif": 10,
-		"./gif.js": 10,
-		"./jpg": 11,
-		"./jpg.js": 11,
-		"./png": 12,
-		"./png.js": 12,
-		"./psd": 13,
-		"./psd.js": 13,
-		"./svg": 14,
-		"./svg.js": 14,
-		"./tiff": 15,
-		"./tiff.js": 15,
-		"./webp": 16,
-		"./webp.js": 16
+		"./bmp": 8,
+		"./bmp.js": 8,
+		"./gif": 9,
+		"./gif.js": 9,
+		"./jpg": 10,
+		"./jpg.js": 10,
+		"./png": 11,
+		"./png.js": 11,
+		"./psd": 12,
+		"./psd.js": 12,
+		"./svg": 13,
+		"./svg.js": 13,
+		"./tiff": 14,
+		"./tiff.js": 14,
+		"./webp": 15,
+		"./webp.js": 15
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -531,11 +507,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 5;
+	webpackContext.id = 4;
 
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -550,7 +526,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -778,10 +754,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
@@ -791,9 +767,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @license  MIT
 	 */
 
-	var base64 = __webpack_require__(22)
-	var ieee754 = __webpack_require__(20)
-	var isArray = __webpack_require__(21)
+	var base64 = __webpack_require__(21)
+	var ieee754 = __webpack_require__(19)
+	var isArray = __webpack_require__(20)
 
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -2116,10 +2092,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7).Buffer))
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2142,7 +2118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2166,7 +2142,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2268,7 +2244,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2297,7 +2273,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2320,7 +2296,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2395,7 +2371,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
@@ -2403,8 +2379,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	// based on http://www.compix.com/fileformattif.htm
 	// TO-DO: support big-endian as well
 
-	var fs = __webpack_require__(17);
-	var readUInt = __webpack_require__(18);
+	var fs = __webpack_require__(16);
+	var readUInt = __webpack_require__(17);
 
 	function isTIFF (buffer) {
 	  var hex4 = buffer.toString('hex', 0, 4);
@@ -2517,10 +2493,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  'calculate': calculate
 	};
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7).Buffer))
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2577,13 +2553,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2597,7 +2573,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// shim for using process in browser
@@ -2661,7 +2637,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports.read = function(buffer, offset, isLE, mLen, nBytes) {
@@ -2751,7 +2727,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -2790,7 +2766,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
