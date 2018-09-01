@@ -16,7 +16,7 @@
 var md = require('markdown-it')({
   html: true,
   linkify: true,
-  typography: true
+  typographer: true
 }).use(require('markdown-it-imsize')); // <-- this use(package_name) is required
 ```
 
